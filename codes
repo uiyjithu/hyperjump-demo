@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperjump Demo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #character {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+        .hyperjump {
+            transform: translateY(-200px);
+        }
+    </style>
+</head>
+<body>
+    <div id="character"></div>
+    <script>
+        // Select the character element
+        const character = document.getElementById('character');
+
+        // Function to perform hyperjump
+        function hyperjump() {
+            character.classList.add('hyperjump');
+            // Remove the class after the animation
+            setTimeout(() => character.classList.remove('hyperjump'), 500);
+        }
+
+        // Add event listener for the jump
+        character.addEventListener('click', hyperjump);
+    </script>
+</body>
+</html>
